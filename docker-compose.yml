@@ -1,0 +1,33 @@
+version: '2'
+services:
+  neo4j:
+    image: neo4j:3.0.3
+    environment:
+      NEO4J_AUTH: none
+    ports:
+      - '7474:7474'
+    volumes:
+      - ./neo4j/conf:/conf
+      - ./neo4j/data:/data
+      - ./neo4j/logs:/logs
+      - ./neo4j/plugins:/plugins
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+
+  app:
+    build: .
+    depends_on:
+      - neo4j
+      - rabbitmq
+    links:
+      - neo4j
+      - rabbitmq
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+    command: puma
