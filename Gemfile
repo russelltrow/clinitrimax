@@ -3,6 +3,7 @@ ruby '2.3.1'
 
 # Rails
 gem 'rails', '>= 5.0'
+gem 'sqlite3'
 gem 'puma'
 gem 'sass-rails'
 gem 'uglifier'
@@ -10,7 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 
 # Neo4j driver
-gem 'neo4j', '>= 7.1.3'
+gem 'neo4j', '>= 7.2.0'
 
 # RabbitMQ
 gem 'bunny', '>= 2.3.1'

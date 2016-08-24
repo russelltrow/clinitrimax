@@ -1,0 +1,11 @@
+development:
+  type: server_db
+  url: http://neo4j:CTck4L4ndVqTCZM0P67Ln@localhost:7474
+
+test:
+  type: server_db
+  url: http://neo4j:CTck4L4ndVqTCZM0P67Ln@localhost:7474
+
+production:
+  type: server_db
+  url: https://56a818cfc7b52:bwgSRuuWNHQ2dewmUtd17gMtq0u4yq5zkTx4C6xP@neo-leanna-runolfsdottir-mediumseagreen-56a81873cf546.do-stories.graphstory.com:7473
