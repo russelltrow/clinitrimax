@@ -23,7 +23,7 @@ private
 
   def extract_trial_record_values(record)
     output = Hash.new
-    unless @@trial_label_transforms.blank?
+    unless @@trial_label_transforms.empty?
       @@trial_label_transforms.each do |new_label, old_label|
         output[new_label] = record.delete(old_label)
       end
