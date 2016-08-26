@@ -1,46 +1,48 @@
 class ClinicalTrialsGov
   # New label => Old label
-  @@trial_label_transforms = { 'name' => 'Title', 'identifier' => 'NCT_Number', 'status' => 'Recruitment',
-                              'enrollment' => 'Enrollment', 'first_received_on' => 'First_Received',
-                              'started_on' => 'Start Date', 'completed_on' => 'Completion Date',
-                              'outcome_measures' => 'Outcome Measures', 'URL' => 'URL' }
+  @@trial_fields = { "name" => "Title", "identifier" => "NCT_Number", "status" => "Recruitment",
+                     "phases" => "Phases", "interventions" => "Interventions",
+                     "conditions" => "Conditions", "sponsors" => "Sponsor_Collaborators",
+                     "age_groups" => "Age Groups", "study_types" => "Study Types",
+                     "enrollment" => "Enrollment", "first_received_on" => "First_Received",
+                     "started_on" => "Start Date", "completed_on" => "Completion Date",
+                     "outcome_measures" => "Outcome Measures", "URL" => "URL" }
 
   def process_trial_record(record)
     trial = extract_trial_record_values(record)
-
-    trial['phases'] = extract_nested_records(record, 'Phases')
-    trial['interventions'] = extract_nested_records(record, 'Interventions')
-    trial['conditions'] = extract_nested_records(record, 'Conditions')
-    trial['sponsors'] = extract_nested_records(record, 'Sponsor_Collaborators')
-    trial['age_groups'] = extract_nested_records(record, 'Age Groups')
-    trial['study_types'] = extract_nested_records(record, 'Study Types')
-    trial['source'] = 'clinicaltrials.gov'
-
-    return trial
+    trial["source"] = "clinicaltrials.gov" unless trial.empty?
+    trial
   end
 
-private
+  private
 
+  # Extract all the specified fields from the trial record
   def extract_trial_record_values(record)
-    output = Hash.new
-    unless @@trial_label_transforms.empty?
-      @@trial_label_transforms.each do |new_label, old_label|
+    output = {}
+
+    @@trial_fields.each do |new_label, old_label|
+      unless record[old_label].blank?
         output[new_label] = record.delete(old_label)
+
+        # Check whether the field has nested values
+        if output[new_label].include? "|"
+          output[new_label] = split_nested_values(output[new_label])
+        end
+
       end
     end
 
-    return output
+    output
   end
 
-  def extract_nested_records(record, type)
-    output = Array.new
-    unless record[type].nil?
-      record[type].split('|').each do |value|
-        output << value
-      end
+  # Split any nested values in the record
+  def split_nested_values(field)
+    nested_values = []
+
+    field.split("|").each do |value|
+      nested_values << value
     end
 
-    return output
+    nested_values
   end
-
 end

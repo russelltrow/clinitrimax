@@ -17,6 +17,14 @@ RSpec.describe ClinicalTrialsGov do
                       "Primary Completion Date" => "Jan-19",
                       "Outcome Measures" => "Proportion of participants in at-risk populations coming for a HIV re-test",
                       "URL" => "https://ClinicalTrials.gov/show/NCT02752152" }
+
+    @partial_trial_record = { "Rank" => "10", "NCT_Number" => "NCT02752111", "Title" => "Anticipatory Counseling on LNG-IU",
+                              "Recruitment" => "Recruiting", "Study Results" => "No Results Available",
+                              "Conditions" => "HIV, Hepatitis B, Hepatitis C and Syphilis Infections",
+                              "Interventions" => "Behavioral: Computer-assisted counseling|Behavioral: Standard counseling",
+                              "URL" => "https://ClinicalTrials.gov/show/NCT02752152" }
+
+    @empty_trial_record = {}
   end
 
   context "with a valid Trial record from ct.gov" do
@@ -28,6 +36,30 @@ RSpec.describe ClinicalTrialsGov do
         expect(trial["name"]).to match("Counseling for HIV and STIs Screening")
         expect(trial["identifier"]).to match("NCT02752152")
         expect(trial["phases"]).to eq(["Phase 1", "Phase 2"])
+      end
+    end
+  end
+
+  context "with a Trial record missing mandatory fields from ct.gov" do
+    describe ".process_trial_record" do
+      it "processes the record succesfully" do
+        ctgov = ClinicalTrialsGov.new
+        trial = ctgov.process_trial_record(@partial_trial_record)
+
+        expect(trial["name"]).to match("Anticipatory Counseling on LNG-IU")
+        expect(trial["identifier"]).to match("NCT02752111")
+        expect(trial["phases"]).to be_nil
+      end
+    end
+  end
+
+  context "with a blank Trial record from ct.gov" do
+    describe ".process_trial_record" do
+      it "processes the record succesfully" do
+        ctgov = ClinicalTrialsGov.new
+        trial = ctgov.process_trial_record(@empty_trial_record)
+
+        expect(trial).to be_empty
       end
     end
   end
