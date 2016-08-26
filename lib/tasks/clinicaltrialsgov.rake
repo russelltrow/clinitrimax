@@ -19,8 +19,6 @@ namespace :clinicaltrialsgov do
       begin
         trial_record = row.to_hash
 
-        raise trial_record.to_s
-
         ctgov = ClinicalTrialsGov.new
         trial = ctgov.process_trial_record(trial_record)
 

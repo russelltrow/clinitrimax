@@ -5,10 +5,10 @@ class Publisher
   # we will be using JSON-encoded strings
   def self.publish(exchange, message = {}, message_type)
     # Create an exchange
-    exchange = channel.direct("clinitrimax.#{exchange}")
+    exchange = channel.direct("clinitrimax.#{exchange}", durable: true)
 
     # Create a queue with bound route for the message
-    queue = channel.queue("trials").bind(exchange, :routing_key => message_type)
+    queue = channel.queue("trials", durable: true).bind(exchange, :routing_key => message_type)
 
     # Wrap message in message type
     document = Hash.new

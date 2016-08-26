@@ -13,8 +13,9 @@ gem "jbuilder"
 # Neo4j driver
 gem "neo4j", ">= 7.2.0"
 
-# RabbitMQ
+# RabbitMQ & Sneakers
 gem "bunny", ">= 2.3.1"
+gem "sneakers"
 
 group :development, :test do
   gem "byebug", platform: :mri
@@ -24,8 +25,6 @@ end
 group :development do
   gem "web-console"
   gem "listen", "~> 3.0.5"
-  gem "spring"
-  gem "spring-watcher-listen", "~> 2.0.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

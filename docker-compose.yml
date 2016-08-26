@@ -30,4 +30,4 @@ services:
       - '3000:3000'
     volumes:
       - .:/app
-    command: puma
+    # command: puma
