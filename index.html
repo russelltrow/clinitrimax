@@ -1099,6 +1099,11 @@ body::before {
         "Hey Monty! Nanny and Grandad are sailing across the big blue Caribbean Sea today! The ship is heading towards an island called <strong>Bonaire</strong> — they'll be there tomorrow! Right now they're probably having a swim in one of the ship's pools or eating ice cream! 🍦"
       </div>
 
+      <!-- Photos from destination -->
+      <div id="todayPhotos" class="today-photos" style="display:none;">
+        <!-- Photos will be injected by JavaScript -->
+      </div>
+
       <div class="today-facts">
         <div class="fact-bubble">
           <div class="fact-icon">🚢</div>
@@ -1338,6 +1343,31 @@ body::before {
     </div>
   </div>
 
+  <!-- ---- BRITANNIA PHOTOS ---- -->
+  <div class="section-header">
+    <h2>🚢 Meet the P&amp;O Britannia! 🚢</h2>
+    <p class="hero-label">This is the AMAZING ship Nanny &amp; Grandad are sailing on!</p>
+  </div>
+
+  <div class="today-photos" style="margin-bottom: 30px;">
+    <div class="today-photo-card">
+      <img src="images/britannia-ship.jpg" alt="The P&O Britannia cruise ship" onerror="this.parentElement.style.display='none';">
+      <div class="photo-label">The mighty P&amp;O Britannia — as big as 3 football pitches!</div>
+    </div>
+    <div class="today-photo-card">
+      <img src="images/britannia-deck.jpg" alt="Britannia deck view" onerror="this.parentElement.style.display='none';">
+      <div class="photo-label">The deck where you can walk around and see the ocean!</div>
+    </div>
+    <div class="today-photo-card">
+      <img src="images/britannia-pool.jpg" alt="Britannia swimming pool" onerror="this.parentElement.style.display='none';">
+      <div class="photo-label">One of the 5 swimming pools on board!</div>
+    </div>
+    <div class="today-photo-card">
+      <img src="images/britannia-sailing.jpg" alt="Britannia sailing at sea" onerror="this.parentElement.style.display='none';">
+      <div class="photo-label">The Britannia sailing across the beautiful Caribbean Sea!</div>
+    </div>
+  </div>
+
   <!-- ---- COUNTDOWN ---- -->
   <div class="countdown-section" id="countdown">
     <h2>🏠 Nanny &amp; Grandad Come Home In...</h2>
@@ -1378,6 +1408,50 @@ body::before {
     { day: 13, date: '2026-02-19', port: 'At Sea',     type: 'sea',   emoji: '🌊', coords: null },
     { day: 14, date: '2026-02-20', port: 'Barbados',   type: 'port',  emoji: '🏠', coords: [881,450] }
   ];
+
+  // ---- DESTINATION PHOTOS ----
+  const destinationPhotos = {
+    'Barbados': [
+      { src: 'images/barbados-beach.jpg', label: 'Beautiful white sand beaches' },
+      { src: 'images/barbados-monkeys.jpg', label: 'Green monkeys swinging in trees' },
+      { src: 'images/barbados-sunset.jpg', label: 'Amazing Caribbean sunset' }
+    ],
+    'Bonaire': [
+      { src: 'images/bonaire-flamingos.jpg', label: 'Thousands of pink flamingos!' },
+      { src: 'images/bonaire-beach.jpg', label: 'Crystal clear turquoise water' },
+      { src: 'images/bonaire-fish.jpg', label: 'Colourful tropical fish' }
+    ],
+    'Curaçao': [
+      { src: 'images/curacao-houses.jpg', label: 'Rainbow-coloured buildings' },
+      { src: 'images/curacao-willemstad.jpg', label: 'Willemstad harbour' },
+      { src: 'images/curacao-beach.jpg', label: 'Beautiful island beaches' }
+    ],
+    'Aruba': [
+      { src: 'images/aruba-beach.jpg', label: 'The whitest sand in the Caribbean' },
+      { src: 'images/aruba-trees.jpg', label: 'Sideways Divi-Divi trees' },
+      { src: 'images/aruba-water.jpg', label: 'Bright blue water' }
+    ],
+    'Jamaica': [
+      { src: 'images/jamaica-falls.jpg', label: 'Dunn\'s River Falls' },
+      { src: 'images/jamaica-beach.jpg', label: 'Tropical paradise beaches' },
+      { src: 'images/jamaica-hummingbird.jpg', label: 'Colourful hummingbirds' }
+    ],
+    'Grand Turk': [
+      { src: 'images/grandturk-horses.jpg', label: 'Wild horses on the beach' },
+      { src: 'images/grandturk-water.jpg', label: 'Amazing turquoise water' },
+      { src: 'images/grandturk-beach.jpg', label: 'Soft sandy beaches' }
+    ],
+    'Antigua': [
+      { src: 'images/antigua-beach.jpg', label: 'One of 365 beautiful beaches' },
+      { src: 'images/antigua-harbour.jpg', label: 'Historic harbour' },
+      { src: 'images/antigua-sailboats.jpg', label: 'Colourful sailboats' }
+    ],
+    'Dominica': [
+      { src: 'images/dominica-rainforest.jpg', label: 'Thick jungle rainforest' },
+      { src: 'images/dominica-parrot.jpg', label: 'Sisserou parrots' },
+      { src: 'images/dominica-waterfall.jpg', label: 'Giant waterfalls' }
+    ]
+  };
 
   // ---- CALCULATE CURRENT DAY ----
   const today = new Date();
@@ -1519,6 +1593,37 @@ body::before {
     document.getElementById('countdownLabel').textContent = 'sleep to go! Nearly there!';
   } else {
     document.getElementById('countdownLabel').textContent = 'sleeps to go!';
+  }
+
+  // ---- UPDATE DESTINATION PHOTOS ----
+  const todayPhotosContainer = document.getElementById('todayPhotos');
+  if (currentStop && currentStop.type === 'port' && destinationPhotos[currentStop.port]) {
+    const photos = destinationPhotos[currentStop.port];
+    let photosHtml = '';
+    photos.forEach(photo => {
+      photosHtml += `
+        <div class="today-photo-card">
+          <img src="${photo.src}" alt="${photo.label}" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">${photo.label}</div>
+        </div>
+      `;
+    });
+    todayPhotosContainer.innerHTML = photosHtml;
+    todayPhotosContainer.style.display = 'grid';
+  } else if (currentStop && currentStop.type === 'sea' && nextPort && destinationPhotos[nextPort.port]) {
+    // If at sea, show photos of upcoming destination
+    const photos = destinationPhotos[nextPort.port];
+    let photosHtml = '<h4 style="grid-column: 1/-1; color: var(--orange-glow); font-size: 1.2rem; margin-bottom: 10px;">Coming up next: ' + nextPort.port + '! ' + nextPort.emoji + '</h4>';
+    photos.forEach(photo => {
+      photosHtml += `
+        <div class="today-photo-card">
+          <img src="${photo.src}" alt="${photo.label}" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">${photo.label}</div>
+        </div>
+      `;
+    });
+    todayPhotosContainer.innerHTML = photosHtml;
+    todayPhotosContainer.style.display = 'grid';
   }
 
 })();
