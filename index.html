@@ -527,6 +527,39 @@ body::before {
   line-height: 1.4;
 }
 
+/* ---- VIDEO SECTION ---- */
+.today-video-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.today-video-container .video-title {
+  color: var(--orange-glow);
+  font-family: 'Bangers', cursive;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 3px solid var(--blue-mid);
+  box-shadow: 0 4px 15px rgba(33,150,243,0.3);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
 /* ---- NANNY & GRANDAD SECTION ---- */
 .grandparents-section {
   margin: 30px auto;
@@ -1099,6 +1132,14 @@ body::before {
         "Hey Monty! Nanny and Grandad are sailing across the big blue Caribbean Sea today! The ship is heading towards an island called <strong>Bonaire</strong> — they'll be there tomorrow! Right now they're probably having a swim in one of the ship's pools or eating ice cream! 🍦"
       </div>
 
+      <!-- Video from destination -->
+      <div id="todayVideo" class="today-video-container" style="display:none;">
+        <h4 class="video-title" id="videoTitle">Watch a video about this destination!</h4>
+        <div class="video-wrapper">
+          <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
       <!-- Photos from destination -->
       <div id="todayPhotos" class="today-photos" style="display:none;">
         <!-- Photos will be injected by JavaScript -->
@@ -1453,6 +1494,21 @@ body::before {
     ]
   };
 
+  // ---- DESTINATION VIDEOS ----
+  // Add YouTube video IDs for each destination here
+  // To get the video ID from a YouTube URL like: https://www.youtube.com/watch?v=ABC123xyz
+  // Use just the part after "v=": ABC123xyz
+  const destinationVideos = {
+    'Barbados': 'dQw4w9WgXcQ',      // Replace with actual Barbados video ID
+    'Bonaire': 'dQw4w9WgXcQ',       // Replace with actual Bonaire video ID
+    'Curaçao': 'dQw4w9WgXcQ',       // Replace with actual Curaçao video ID
+    'Aruba': 'dQw4w9WgXcQ',         // Replace with actual Aruba video ID
+    'Jamaica': 'dQw4w9WgXcQ',       // Replace with actual Jamaica video ID
+    'Grand Turk': 'dQw4w9WgXcQ',    // Replace with actual Grand Turk video ID
+    'Antigua': 'dQw4w9WgXcQ',       // Replace with actual Antigua video ID
+    'Dominica': 'dQw4w9WgXcQ'       // Replace with actual Dominica video ID
+  };
+
   // ---- CALCULATE CURRENT DAY ----
   const today = new Date();
   today.setHours(0,0,0,0);
@@ -1624,6 +1680,24 @@ body::before {
     });
     todayPhotosContainer.innerHTML = photosHtml;
     todayPhotosContainer.style.display = 'grid';
+  }
+
+  // ---- UPDATE DESTINATION VIDEO ----
+  const todayVideoContainer = document.getElementById('todayVideo');
+  const videoFrame = document.getElementById('videoFrame');
+  const videoTitle = document.getElementById('videoTitle');
+
+  if (currentStop && currentStop.type === 'port' && destinationVideos[currentStop.port]) {
+    const videoId = destinationVideos[currentStop.port];
+    videoFrame.src = 'https://www.youtube.com/embed/' + videoId;
+    videoTitle.textContent = '🎬 Watch a video about ' + currentStop.port + '!';
+    todayVideoContainer.style.display = 'block';
+  } else if (currentStop && currentStop.type === 'sea' && nextPort && destinationVideos[nextPort.port]) {
+    // If at sea, show video of upcoming destination
+    const videoId = destinationVideos[nextPort.port];
+    videoFrame.src = 'https://www.youtube.com/embed/' + videoId;
+    videoTitle.textContent = '🎬 Get ready for ' + nextPort.port + '! ' + nextPort.emoji;
+    todayVideoContainer.style.display = 'block';
   }
 
 })();
