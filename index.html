@@ -557,7 +557,6 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 12px;
 }
 
 /* ---- NANNY & GRANDAD SECTION ---- */
@@ -1136,7 +1135,7 @@ body::before {
       <div id="todayVideo" class="today-video-container" style="display:none;">
         <h4 class="video-title" id="videoTitle">Watch a video about this destination!</h4>
         <div class="video-wrapper">
-          <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe id="videoFrame" width="560" height="315" src="" title="YouTube video player" style="border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
 
@@ -1499,8 +1498,8 @@ body::before {
   // To get the video ID from a YouTube URL like: https://www.youtube.com/watch?v=ABC123xyz
   // Use just the part after "v=": ABC123xyz
   const destinationVideos = {
-    'Barbados': 'dQw4w9WgXcQ',      // Replace with actual Barbados video ID
-    'Bonaire': 'dQw4w9WgXcQ',       // Replace with actual Bonaire video ID
+    'Barbados': 'x3BLmksuxoM',      // Replace with actual Barbados video ID
+    'Bonaire': 'x3BLmksuxoM',       // Replace with actual Bonaire video ID
     'Curaçao': 'dQw4w9WgXcQ',       // Replace with actual Curaçao video ID
     'Aruba': 'dQw4w9WgXcQ',         // Replace with actual Aruba video ID
     'Jamaica': 'dQw4w9WgXcQ',       // Replace with actual Jamaica video ID
@@ -1689,15 +1688,21 @@ body::before {
 
   if (currentStop && currentStop.type === 'port' && destinationVideos[currentStop.port]) {
     const videoId = destinationVideos[currentStop.port];
-    videoFrame.src = 'https://www.youtube.com/embed/' + videoId;
+    const embedUrl = 'https://www.youtube.com/embed/' + videoId;
+    videoFrame.src = embedUrl;
     videoTitle.textContent = '🎬 Watch a video about ' + currentStop.port + '!';
     todayVideoContainer.style.display = 'block';
+    console.log('Video loaded for port:', currentStop.port, 'URL:', embedUrl);
   } else if (currentStop && currentStop.type === 'sea' && nextPort && destinationVideos[nextPort.port]) {
     // If at sea, show video of upcoming destination
     const videoId = destinationVideos[nextPort.port];
-    videoFrame.src = 'https://www.youtube.com/embed/' + videoId;
+    const embedUrl = 'https://www.youtube.com/embed/' + videoId;
+    videoFrame.src = embedUrl;
     videoTitle.textContent = '🎬 Get ready for ' + nextPort.port + '! ' + nextPort.emoji;
     todayVideoContainer.style.display = 'block';
+    console.log('Video loaded for upcoming port:', nextPort.port, 'URL:', embedUrl);
+  } else {
+    console.log('No video to display. currentStop:', currentStop, 'nextPort:', nextPort);
   }
 
 })();
