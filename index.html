@@ -878,8 +878,8 @@ body::before {
 <div class="status-bar" id="statusBar">
   <div class="status-content">
     <span class="pulse-dot"></span>
-    <span class="day-badge" id="dayBadge">DAY 3 OF 14</span>
-    <span class="location-text" id="locationText">📍 Bonaire! 🦩</span>
+    <span class="day-badge" id="dayBadge">DAY 4 OF 14</span>
+    <span class="location-text" id="locationText">📍 Curaçao! 🏘️</span>
   </div>
 </div>
 
@@ -938,7 +938,7 @@ body::before {
           points="881,450 488,498 456,497 411,481 90,213 359,75 776,272 797,355 881,450"/>
 
         <!-- ROUTE LINE — Completed portion (solid orange) -->
-        <polyline id="routeCompleted" class="map-route-completed" points="881,450 488,498"/>
+        <polyline id="routeCompleted" class="map-route-completed" points="881,450 488,498 456,497"/>
 
         <!-- PORT MARKERS -->
         <!-- Barbados (Start/End) -->
@@ -949,13 +949,13 @@ body::before {
         </g>
 
         <!-- Bonaire -->
-        <g class="map-port current" transform="translate(488,498)">
+        <g class="map-port visited" transform="translate(488,498)">
           <circle class="port-dot" r="7"/>
           <text x="-15" y="-12" font-weight="700" font-size="11" text-anchor="middle">Bonaire</text>
         </g>
 
         <!-- Curacao -->
-        <g class="map-port" transform="translate(456,497)">
+        <g class="map-port current" transform="translate(456,497)">
           <circle class="port-dot" r="7"/>
           <text x="0" y="22" font-weight="700" font-size="11" text-anchor="middle">Curaçao</text>
         </g>
@@ -991,8 +991,8 @@ body::before {
           <text x="15" y="4" font-weight="700" font-size="11">Dominica</text>
         </g>
 
-        <!-- SHIP ICON (current position — at Bonaire) -->
-        <g class="ship-icon" id="shipIcon" transform="translate(488,498)">
+        <!-- SHIP ICON (current position — at Curaçao) -->
+        <g class="ship-icon" id="shipIcon" transform="translate(456,497)">
           <text font-size="28" text-anchor="middle" y="8">🚢</text>
         </g>
       </svg>
@@ -1028,14 +1028,14 @@ body::before {
         <div class="tl-port">At Sea</div>
       </div>
       <!-- Day 3 -->
-      <div class="timeline-day current">
+      <div class="timeline-day visited">
         <div class="tl-icon">🦩</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Mon 9 Feb</div>
         <div class="tl-port">Bonaire</div>
       </div>
       <!-- Day 4 -->
-      <div class="timeline-day">
+      <div class="timeline-day current">
         <div class="tl-icon">🏘️</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Tue 10 Feb</div>
@@ -1122,85 +1122,84 @@ body::before {
 
   <div class="today-card" id="todayCard">
     <div class="today-card-header">
-      <span style="font-size:2rem">🦩</span>
-      <h3 id="todayTitle">Day 3 — Bonaire!</h3>
+      <span style="font-size:2rem">🏘️</span>
+      <h3 id="todayTitle">Day 4 — Curaçao!</h3>
     </div>
     <div class="today-card-body">
       <div class="today-hero-message">
-        <span class="hero-name">🦾 Iron Man says:</span><br>
-        "Hey Monty! Nanny and Grandad have arrived in <strong>Bonaire</strong>! 🦩 This island is AMAZING — it's famous for having thousands of beautiful pink flamingos! The water is super clear and bright blue, and there are so many colourful fish swimming around! Maybe they'll see some flamingos standing on one leg! How cool is that?!"
+        <span class="hero-name">⚡ Thor says:</span><br>
+        "Hey Monty! Nanny and Grandad have arrived in <strong>Curaçao</strong>! 🏘️ This island is like a giant rainbow — the capital city Willemstad has the most colourful buildings you've ever seen! Every house is painted a different bright colour — pink, yellow, orange, blue, green! It looks like someone painted the whole town with crayons! The town is so pretty it's actually a UNESCO World Heritage Site — that means it's super special and important!"
       </div>
 
       <div class="today-hero-message" style="margin-top: 15px; border-left-color: var(--blue-bright); background: linear-gradient(135deg, rgba(255,109,0,0.1), rgba(33,150,243,0.15));">
         <span class="hero-name">🕷️ Spider-Man reports:</span><br>
-        "I've been swinging around the island with my web-shooters to see what Nanny and Grandad are up to! The ship docked early this morning, and they probably walked down the big gangway onto the sunny island. Bonaire is small but SUPER special — it's part of something called the 'ABC Islands' (that's Aruba, Bonaire, and Curaçao). The beaches here have bright white sand that's soft like powder, and the sea is the most amazing shade of turquoise blue you've ever seen!<br><br>
-        They might be visiting the famous salt flats where thousands of flamingos gather! These magnificent pink birds are almost as tall as you, Monty — they can be 4 feet high! They stand in the shallow salty water looking for tiny shrimp to eat (that's what makes them pink!). The flamingos sometimes stand on one leg to save energy. 🦩 There could be hundreds or even THOUSANDS of flamingos all standing together in giant pink groups!"
+        "I've been swinging through Willemstad and WOW! There's a special bridge that floats on the water and opens up to let big ships through! 🌉 And guess what? A long time ago, someone got a headache from all the white buildings in the sun, so they painted every house a different bright colour! Now it looks like a rainbow town! Nanny and Grandad are probably taking lots of photos and walking across the floating bridge!"
       </div>
 
       <div class="today-hero-message" style="margin-top: 15px; border-left-color: var(--orange-bright);">
-        <span class="hero-name">🦾 What might they be doing right now?</span><br>
-        <strong>Morning Adventure:</strong> They might have taken a special boat with a glass bottom so they can see all the colourful fish swimming underneath! Or maybe they went on a little bus tour around the island to see the flamingos, the salt piles (they look like white mountains!), and the cute colourful buildings in the town called Kralendijk.<br><br>
-        <strong>Lunchtime:</strong> Perhaps they're eating fresh fruit and drinking cold coconut water while sitting under a palm tree! The island has lots of yummy food including fresh fish that was caught that same morning!<br><br>
-        <strong>Afternoon Fun:</strong> They could be relaxing on a beautiful beach with their feet in the warm Caribbean water, watching the little waves roll in. Or maybe they're shopping for souvenirs to bring home for YOU — perhaps a flamingo toy or a t-shirt with the island on it!<br><br>
-        <strong>Special Note:</strong> Bonaire is famous for protecting its nature — all the fish, coral, and animals are kept safe here. It's like a superhero sanctuary, but for sea creatures! 🐠🐢
+        <span class="hero-name">🦾 What they're doing today!</span><br>
+        <strong>Morning Adventure:</strong> Right now they're exploring the colourful streets of Willemstad, taking lots of photos of the rainbow-coloured buildings! They've walked across the Queen Emma floating bridge — it wobbles a little bit when you walk on it! They're also visiting the floating market where boats from Venezuela sell fresh fruit and vegetables right from their boats!<br><br>
+        <strong>Lunchtime:</strong> They're eating at a restaurant by the harbour, trying local food like 'keshi yena' (that's cheese filled with meat!) or fresh fish caught from the Caribbean Sea. They're drinking cold drinks and enjoying the sunshine!<br><br>
+        <strong>Afternoon Fun:</strong> This afternoon they're relaxing at one of Curaçao's beautiful beaches with crystal blue water, or shopping for souvenirs in the colourful town. They're buying you a little painted house ornament or a t-shirt with all the colourful buildings on it! They're also getting ice cream with yummy tropical flavours!<br><br>
+        <strong>Special Note:</strong> Curaçao is famous for inventing the colour BLUE! Well, not exactly, but they make a special blue drink called Blue Curaçao from oranges grown on the island. It's the brightest blue you've ever seen! 💙
       </div>
 
       <!-- Video from destination -->
       <div class="today-video-container" style="margin-top: 20px;">
-        <h4 class="video-title">🎬 Watch a video about Bonaire! 🦩</h4>
+        <h4 class="video-title">🎬 Watch a video about Curaçao! 🏘️</h4>
         <div class="video-wrapper">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/x3BLmksuxoM" title="YouTube video player" style="border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
 
-      <!-- Bonaire Photo Gallery -->
+      <!-- Curaçao Photo Gallery -->
       <div class="today-photos" style="margin-top: 20px;">
         <div class="today-photo-card">
-          <img src="images/bonaire-flamingos.jpg" alt="Thousands of pink flamingos" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">Thousands of pink flamingos!</div>
+          <img src="images/curacao-houses.jpg" alt="Rainbow-coloured buildings" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">Rainbow-coloured buildings of Willemstad!</div>
         </div>
         <div class="today-photo-card">
-          <img src="images/bonaire-beach.jpg" alt="Crystal clear turquoise water" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">Crystal clear turquoise water</div>
+          <img src="images/curacao-willemstad.jpg" alt="Willemstad harbour" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">The beautiful harbour with floating bridge</div>
         </div>
         <div class="today-photo-card">
-          <img src="images/bonaire-fish.jpg" alt="Colourful tropical fish" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">Colourful tropical fish</div>
+          <img src="images/curacao-beach.jpg" alt="Beautiful island beaches" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">Crystal blue beaches of Curaçao</div>
         </div>
       </div>
 
       <div class="today-facts">
         <div class="fact-bubble">
-          <div class="fact-icon">🦩</div>
-          <div class="fact-text">Bonaire has <strong>over 20,000 pink flamingos</strong> — that's more flamingos than people!</div>
+          <div class="fact-icon">🎨</div>
+          <div class="fact-text">Willemstad has been a <strong>UNESCO World Heritage Site</strong> since 1997!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🐠</div>
-          <div class="fact-text">The water is <strong>so clear</strong> you can see fish swimming 30 metres down!</div>
+          <div class="fact-icon">🌉</div>
+          <div class="fact-text">The Queen Emma Bridge is a <strong>floating bridge</strong> that swings open for ships!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🤿</div>
-          <div class="fact-text">Bonaire is one of the <strong>best places in the WORLD</strong> for seeing fish!</div>
+          <div class="fact-icon">🏘️</div>
+          <div class="fact-text">The colourful buildings are <strong>over 300 years old</strong> — older than your great-great-great grandparents!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🏝️</div>
-          <div class="fact-text">The island is <strong>warm all year</strong> — it's like summer every day!</div>
+          <div class="fact-icon">💙</div>
+          <div class="fact-text"><strong>Blue Curaçao</strong> liqueur was invented here and is famous around the world!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🧂</div>
-          <div class="fact-text">Bonaire makes <strong>mountains of sea salt</strong> that sparkle white in the sun!</div>
+          <div class="fact-icon">🍊</div>
+          <div class="fact-text">Blue Curaçao is made from <strong>special oranges</strong> called Laraha that only grow here!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🐢</div>
-          <div class="fact-text">Sea turtles swim in the waters around Bonaire — they're <strong>really old</strong>, some over 100 years!</div>
+          <div class="fact-icon">🗣️</div>
+          <div class="fact-text">People in Curaçao speak <strong>4 languages</strong> — Dutch, English, Spanish, and Papiamento!</div>
         </div>
         <div class="fact-bubble">
           <div class="fact-icon">🏖️</div>
-          <div class="fact-text">The beaches have <strong>soft white sand</strong> that feels lovely between your toes!</div>
+          <div class="fact-text">Curaçao has <strong>35 beaches</strong> with the clearest water in the Caribbean!</div>
         </div>
         <div class="fact-bubble">
           <div class="fact-icon">🌡️</div>
-          <div class="fact-text">It's about <strong>30°C today</strong> — that's lovely and hot! Perfect beach weather!</div>
+          <div class="fact-text">It's about <strong>30°C today</strong> — warm and sunny, perfect for exploring!</div>
         </div>
       </div>
     </div>
@@ -1260,9 +1259,9 @@ body::before {
     </div>
 
     <!-- Bonaire -->
-    <div class="port-card current">
+    <div class="port-card visited">
       <div class="port-card-image" style="background: linear-gradient(135deg, #ff69b4, #00ced1), url('images/bonaire.jpg'); background-size: cover; background-position: center;">
-        <div class="port-day-badge">📍 Day 3 — TODAY!</div>
+        <div class="port-day-badge">✅ Day 3 — Visited!</div>
         <div class="port-card-hero-icon">🦩</div>
       </div>
       <div class="port-card-content">
@@ -1276,9 +1275,9 @@ body::before {
     </div>
 
     <!-- Curacao -->
-    <div class="port-card">
+    <div class="port-card current">
       <div class="port-card-image" style="background: linear-gradient(135deg, #ff6347, #4169e1), url('images/curacao.jpg'); background-size: cover; background-position: center;">
-        <div class="port-day-badge">Day 4</div>
+        <div class="port-day-badge">📍 Day 4 — TODAY!</div>
         <div class="port-card-hero-icon">🏘️</div>
       </div>
       <div class="port-card-content">
@@ -1452,7 +1451,7 @@ body::before {
   <!-- ---- COUNTDOWN ---- -->
   <div class="countdown-section" id="countdown">
     <h2>🏠 Nanny &amp; Grandad Come Home In...</h2>
-    <div class="countdown-number" id="countdownNumber">11</div>
+    <div class="countdown-number" id="countdownNumber">10</div>
     <div class="countdown-label" id="countdownLabel">sleeps to go!</div>
     <p style="margin-top:10px; font-size:0.95rem; opacity:0.9;">They'll be back on <strong>Friday 20 February</strong> — not long now, Monty!</p>
   </div>
