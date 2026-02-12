@@ -878,8 +878,8 @@ body::before {
 <div class="status-bar" id="statusBar">
   <div class="status-content">
     <span class="pulse-dot"></span>
-    <span class="day-badge" id="dayBadge">DAY 5 OF 14</span>
-    <span class="location-text" id="locationText">📍 Aruba! 🏖️</span>
+    <span class="day-badge" id="dayBadge">DAY 6 OF 14</span>
+    <span class="location-text" id="locationText">⚓ At Sea — Sailing towards Jamaica! 🌊</span>
   </div>
 </div>
 
@@ -938,7 +938,7 @@ body::before {
           points="881,450 488,498 456,497 411,481 90,213 359,75 776,272 797,355 881,450"/>
 
         <!-- ROUTE LINE — Completed portion (solid orange) -->
-        <polyline id="routeCompleted" class="map-route-completed" points="881,450 488,498 456,497 411,481"/>
+        <polyline id="routeCompleted" class="map-route-completed" points="881,450 488,498 456,497 411,481 251,347"/>
 
         <!-- PORT MARKERS -->
         <!-- Barbados (Start/End) -->
@@ -961,7 +961,7 @@ body::before {
         </g>
 
         <!-- Aruba -->
-        <g class="map-port current" transform="translate(411,481)">
+        <g class="map-port visited" transform="translate(411,481)">
           <circle class="port-dot" r="7"/>
           <text x="-10" y="-12" font-weight="700" font-size="11" text-anchor="middle">Aruba</text>
         </g>
@@ -991,8 +991,8 @@ body::before {
           <text x="15" y="4" font-weight="700" font-size="11">Dominica</text>
         </g>
 
-        <!-- SHIP ICON (current position — at Aruba) -->
-        <g class="ship-icon" id="shipIcon" transform="translate(411,481)">
+        <!-- SHIP ICON (current position — sailing to Jamaica) -->
+        <g class="ship-icon" id="shipIcon" transform="translate(251,347)">
           <text font-size="28" text-anchor="middle" y="8">🚢</text>
         </g>
       </svg>
@@ -1042,14 +1042,14 @@ body::before {
         <div class="tl-port">Curaçao</div>
       </div>
       <!-- Day 5 -->
-      <div class="timeline-day current">
+      <div class="timeline-day visited">
         <div class="tl-icon">🏖️</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Wed 11 Feb</div>
         <div class="tl-port">Aruba</div>
       </div>
       <!-- Day 6 -->
-      <div class="timeline-day">
+      <div class="timeline-day current">
         <div class="tl-icon">🌊</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Thu 12 Feb</div>
@@ -1122,84 +1122,76 @@ body::before {
 
   <div class="today-card" id="todayCard">
     <div class="today-card-header">
-      <span style="font-size:2rem">🏖️</span>
-      <h3 id="todayTitle">Day 5 — Aruba!</h3>
+      <span style="font-size:2rem">🌊</span>
+      <h3 id="todayTitle">Day 6 — At Sea!</h3>
     </div>
     <div class="today-card-body">
       <div class="today-hero-message">
         <span class="hero-name">⚡ Thor says:</span><br>
-        "Hey Monty! Nanny and Grandad have arrived in <strong>Aruba</strong>! 🏖️ This island is famous for having some of the most beautiful beaches in the WHOLE WORLD! The sand is so white and soft it feels like walking on clouds! The water is the brightest blue you've ever seen — even brighter than my lightning! And there are special trees called Divi-Divi trees that lean sideways because the wind blows them all day long. They look like they're doing a funny dance!"
+        "Hey Monty! Today Nanny and Grandad are <strong>at sea</strong>! 🌊 That means the big ship is sailing across the ocean from Aruba to Jamaica! They woke up this morning surrounded by water as far as they can see — it's like being in the middle of a giant blue bathtub! The Britannia is like a floating city with swimming pools, restaurants, shows, and games! Today is all about relaxing on the ship and having fun!"
       </div>
 
       <div class="today-hero-message" style="margin-top: 15px; border-left-color: var(--blue-bright); background: linear-gradient(135deg, rgba(255,109,0,0.1), rgba(33,150,243,0.15));">
         <span class="hero-name">🕷️ Spider-Man reports:</span><br>
-        "I've been exploring Aruba and WOW! The beaches here are AMAZING! Eagle Beach is one of the best beaches on planet Earth! The sand is softer than your bed at home! And guess what? The water is so calm and clear you can see right to the bottom where little colourful fish are swimming! There are also cool rock formations called the Natural Bridge and the California Lighthouse where you can see the whole island!"
+        "I've been swinging around the ship all day and there's SO MUCH to do! There are 5 swimming pools where you can splash around, a cinema showing movies, restaurants with yummy food from all around the world, and even a big theatre with amazing shows! I've seen people playing mini-golf, reading books by the pool, and dancing! Some people are even getting massages at the spa — but I prefer to keep moving!"
       </div>
 
       <div class="today-hero-message" style="margin-top: 15px; border-left-color: var(--orange-bright);">
         <span class="hero-name">🦾 What they're doing today!</span><br>
-        <strong>Morning Adventure:</strong> Right now they're at one of Aruba's world-famous beaches — probably Eagle Beach or Palm Beach! The sand is super white and soft, and the water is warm and calm like a giant bathtub! They're walking along the beach, collecting pretty shells, and watching the Divi-Divi trees lean over in the breeze. They might even see some tropical fish in the clear water!<br><br>
-        <strong>Lunchtime:</strong> They're eating lunch at a beach restaurant with their toes in the sand! They're trying fresh seafood and yummy tropical fruit smoothies. Maybe they're eating 'keshi yena' (cheese with meat) or fresh grilled fish with rice and plantains. It's so sunny they're wearing sunglasses and sun cream!<br><br>
-        <strong>Afternoon Fun:</strong> This afternoon they might visit the California Lighthouse to see the whole island from up high, or go shopping in Oranjestad (the capital city) for souvenirs! They're definitely buying you something special — maybe a t-shirt with a Divi-Divi tree on it, or a little wooden lighthouse! They're also taking LOTS of photos of the beautiful blue water and white sandy beaches to show you!<br><br>
-        <strong>Special Note:</strong> Aruba is called "One Happy Island" because everyone who visits has such a brilliant time! The sun shines almost EVERY day — it hardly ever rains! That's why the beaches are perfect for playing and swimming! 🌞
+        <strong>Morning Relaxation:</strong> Right now they're probably lounging by one of the swimming pools on the top deck, feeling the warm Caribbean sun and cool ocean breeze! Maybe they're reading books, sipping tropical drinks with little umbrellas in them, or taking a dip in the pool. From up on deck they can see nothing but beautiful blue ocean all around them!<br><br>
+        <strong>Lunchtime Feast:</strong> They're having a delicious lunch at one of the ship's 13 restaurants! There's so much food to choose from — pizza, burgers, fish and chips, curry, pasta, salads, and the most amazing desserts! They might even be at the buffet trying a little bit of everything! And they're eating while watching the waves through the big windows!<br><br>
+        <strong>Afternoon Entertainment:</strong> This afternoon they might be watching a show in the theatre, playing games like bingo or trivia, or exploring all the different parts of the ship! Maybe they're shopping in the onboard shops, getting ice cream, or just sitting on deck chairs watching dolphins jump in the waves! Tonight there might be a big party with music and dancing!<br><br>
+        <strong>Special Note:</strong> At sea days are for REST and FUN! After visiting so many exciting islands, today is perfect for Nanny and Grandad to relax, recharge, and enjoy all the amazing things the Britannia has to offer. Tomorrow they arrive in Jamaica! 🏄
       </div>
 
-      <!-- Video from destination -->
-      <div class="today-video-container" style="margin-top: 20px;">
-        <h4 class="video-title">🎬 Watch a video about Aruba! 🏖️</h4>
-        <div class="video-wrapper">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/9OTecjGzMjg" title="YouTube video player" style="border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <!-- Aruba Photo Gallery -->
+      <!-- Ship Activity Photos -->
       <div class="today-photos" style="margin-top: 20px;">
         <div class="today-photo-card">
-          <img src="images/aruba-beach.jpg" alt="White sandy beaches" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">The whitest sand in the Caribbean!</div>
+          <img src="images/britannia-pool.jpg" alt="Pool on the Britannia" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">One of the 5 swimming pools on board!</div>
         </div>
         <div class="today-photo-card">
-          <img src="images/aruba-trees.jpg" alt="Sideways Divi-Divi trees" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">The famous sideways Divi-Divi trees!</div>
+          <img src="images/britannia-deck.jpg" alt="Deck view" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">The beautiful deck with ocean views!</div>
         </div>
         <div class="today-photo-card">
-          <img src="images/aruba-water.jpg" alt="Crystal blue water" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">Bright blue water — the clearest in the world!</div>
+          <img src="images/britannia-sailing.jpg" alt="Ship sailing at sea" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">The Britannia sailing across the Caribbean Sea!</div>
         </div>
       </div>
 
       <div class="today-facts">
         <div class="fact-bubble">
-          <div class="fact-icon">🏖️</div>
-          <div class="fact-text"><strong>Eagle Beach</strong> is rated one of the best beaches in the WORLD!</div>
+          <div class="fact-icon">🚢</div>
+          <div class="fact-text">The Britannia is <strong>330 metres long</strong> — as long as 3 football pitches!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🌴</div>
-          <div class="fact-text">The <strong>Divi-Divi trees</strong> lean sideways because of the trade winds — they've been blown that way for hundreds of years!</div>
+          <div class="fact-icon">🏊</div>
+          <div class="fact-text">There are <strong>5 swimming pools</strong> on board — you could swim in a different one every day!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">☀️</div>
-          <div class="fact-text">Aruba has sunshine <strong>almost every day</strong> — it only gets about 50cm of rain per YEAR!</div>
+          <div class="fact-icon">🍕</div>
+          <div class="fact-text">The ship has <strong>13 restaurants</strong> serving food from all around the world!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">😊</div>
-          <div class="fact-text">Aruba is called <strong>"One Happy Island"</strong> — everyone here is super friendly!</div>
+          <div class="fact-icon">🎭</div>
+          <div class="fact-text">There are <strong>3 theatres</strong> showing amazing live shows every night!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🦎</div>
-          <div class="fact-text">Aruba has cute little <strong>blue-tailed lizards</strong> that run around everywhere!</div>
+          <div class="fact-icon">🌊</div>
+          <div class="fact-text">The ship is sailing about <strong>22 knots</strong> — that's about 40 km/hour across the ocean!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🗣️</div>
-          <div class="fact-text">People in Aruba speak <strong>Papiamento</strong> (a mix of Spanish, Portuguese, Dutch, and English) plus Dutch and English!</div>
+          <div class="fact-icon">👨‍👩‍👧‍👦</div>
+          <div class="fact-text">There are <strong>3,647 passengers</strong> on board — that's like a whole village sailing together!</div>
+        </div>
+        <div class="fact-bubble">
+          <div class="fact-icon">🐬</div>
+          <div class="fact-text">Keep your eyes on the ocean — you might see <strong>dolphins or flying fish</strong> jumping in the waves!</div>
         </div>
         <div class="fact-bubble">
           <div class="fact-icon">🏝️</div>
-          <div class="fact-text">Aruba is only <strong>32km long</strong> — you could drive around the whole island in less than 2 hours!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">🌡️</div>
-          <div class="fact-text">It's about <strong>30°C today</strong> — hot, sunny, and perfect for the beach!</div>
+          <div class="fact-text"><strong>Tomorrow:</strong> They arrive in Jamaica — famous for waterfalls and super-fast runners!</div>
         </div>
       </div>
     </div>
@@ -1291,9 +1283,9 @@ body::before {
     </div>
 
     <!-- Aruba -->
-    <div class="port-card current">
+    <div class="port-card visited">
       <div class="port-card-image" style="background: linear-gradient(135deg, #ffd700, #00bfff), url('images/aruba.jpg'); background-size: cover; background-position: center;">
-        <div class="port-day-badge">📍 Day 5 — TODAY!</div>
+        <div class="port-day-badge">✅ Day 5 — Visited!</div>
         <div class="port-card-hero-icon">🏖️</div>
       </div>
       <div class="port-card-content">
@@ -1451,7 +1443,7 @@ body::before {
   <!-- ---- COUNTDOWN ---- -->
   <div class="countdown-section" id="countdown">
     <h2>🏠 Nanny &amp; Grandad Come Home In...</h2>
-    <div class="countdown-number" id="countdownNumber">9</div>
+    <div class="countdown-number" id="countdownNumber">8</div>
     <div class="countdown-label" id="countdownLabel">sleeps to go!</div>
     <p style="margin-top:10px; font-size:0.95rem; opacity:0.9;">They'll be back on <strong>Friday 20 February</strong> — not long now, Monty!</p>
   </div>
