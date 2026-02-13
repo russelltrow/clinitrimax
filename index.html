@@ -878,8 +878,8 @@ body::before {
 <div class="status-bar" id="statusBar">
   <div class="status-content">
     <span class="pulse-dot"></span>
-    <span class="day-badge" id="dayBadge">DAY 6 OF 14</span>
-    <span class="location-text" id="locationText">⚓ At Sea — Sailing towards Jamaica! 🌊</span>
+    <span class="day-badge" id="dayBadge">DAY 7 OF 14</span>
+    <span class="location-text" id="locationText">📍 Jamaica — Land of Waterfalls! 🏄</span>
   </div>
 </div>
 
@@ -938,7 +938,7 @@ body::before {
           points="881,450 488,498 456,497 411,481 90,213 359,75 776,272 797,355 881,450"/>
 
         <!-- ROUTE LINE — Completed portion (solid orange) -->
-        <polyline id="routeCompleted" class="map-route-completed" points="881,450 488,498 456,497 411,481 251,347"/>
+        <polyline id="routeCompleted" class="map-route-completed" points="881,450 488,498 456,497 411,481 90,213"/>
 
         <!-- PORT MARKERS -->
         <!-- Barbados (Start/End) -->
@@ -967,7 +967,7 @@ body::before {
         </g>
 
         <!-- Jamaica -->
-        <g class="map-port" transform="translate(90,213)">
+        <g class="map-port visited" transform="translate(90,213)">
           <circle class="port-dot" r="7"/>
           <ellipse cx="0" cy="0" rx="30" ry="12" class="map-island"/>
           <text x="0" y="-18" font-weight="700" font-size="11" text-anchor="middle">Jamaica</text>
@@ -991,8 +991,8 @@ body::before {
           <text x="15" y="4" font-weight="700" font-size="11">Dominica</text>
         </g>
 
-        <!-- SHIP ICON (current position — sailing to Jamaica) -->
-        <g class="ship-icon" id="shipIcon" transform="translate(251,347)">
+        <!-- SHIP ICON (current position — at Jamaica) -->
+        <g class="ship-icon" id="shipIcon" transform="translate(90,213)">
           <text font-size="28" text-anchor="middle" y="8">🚢</text>
         </g>
       </svg>
@@ -1049,14 +1049,14 @@ body::before {
         <div class="tl-port">Aruba</div>
       </div>
       <!-- Day 6 -->
-      <div class="timeline-day current">
+      <div class="timeline-day visited">
         <div class="tl-icon">🌊</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Thu 12 Feb</div>
         <div class="tl-port">At Sea</div>
       </div>
       <!-- Day 7 -->
-      <div class="timeline-day">
+      <div class="timeline-day current">
         <div class="tl-icon">🏄</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Fri 13 Feb</div>
@@ -1122,26 +1122,26 @@ body::before {
 
   <div class="today-card" id="todayCard">
     <div class="today-card-header">
-      <span style="font-size:2rem">🌊</span>
-      <h3 id="todayTitle">Day 6 — At Sea!</h3>
+      <span style="font-size:2rem">🏄</span>
+      <h3 id="todayTitle">Day 7 — Jamaica!</h3>
     </div>
     <div class="today-card-body">
       <div class="today-hero-message">
         <span class="hero-name">🦾 Iron Man says:</span><br>
-        "Hey Monty! Today Nanny and Grandad are <strong>at sea</strong>! 🌊 That means the big ship is sailing across the ocean from Aruba to Jamaica! They woke up this morning surrounded by water as far as they can see — it's like being in the middle of a giant blue bathtub! The Britannia is like a floating city with swimming pools, restaurants, shows, and games! Today is all about relaxing on the ship and having fun!"
+        "Hey Monty! Today Nanny and Grandad have arrived in <strong>Jamaica</strong>! 🇯🇲 This is one of the most exciting islands in the whole Caribbean! Jamaica is famous for its incredible waterfalls that you can actually CLIMB, beautiful beaches with crystal-clear water, and the friendliest people who love music and dancing! The island is covered in green mountains and tropical forests — my sensors are picking up the most amazing sights!"
       </div>
 
       <div class="today-hero-message" style="margin-top: 15px; border-left-color: var(--blue-bright); background: linear-gradient(135deg, rgba(255,109,0,0.1), rgba(33,150,243,0.15));">
         <span class="hero-name">💪 Hulk reports:</span><br>
-        "Hulk been exploring the ship all day and there's SO MUCH to do! There are 5 swimming pools where you can splash around, a cinema showing movies, restaurants with yummy food from all around the world, and even a big theatre with amazing shows! Hulk seen people playing mini-golf, reading books by the pool, and dancing! Some people are even getting massages at the spa — but Hulk prefer to keep moving!"
+        "Hulk LOVE Jamaica! This island has the BEST waterfalls! At Dunn's River Falls, you can climb UP the waterfall while water splashes all over you — it's like climbing a natural water slide! There are 600 feet of cascading waterfalls with natural pools where you can splash around! Hulk also see beautiful green mountains, tropical flowers, and colorful hummingbirds flying everywhere! Jamaica make Hulk happy!"
       </div>
 
       <div class="today-hero-message" style="margin-top: 15px; border-left-color: var(--orange-bright);">
         <span class="hero-name">🦾 What they're doing today!</span><br>
-        <strong>Morning Relaxation:</strong> Right now they're probably lounging by one of the swimming pools on the top deck, feeling the warm Caribbean sun and cool ocean breeze! Maybe they're reading books, sipping tropical drinks with little umbrellas in them, or taking a dip in the pool. From up on deck they can see nothing but beautiful blue ocean all around them!<br><br>
-        <strong>Lunchtime Feast:</strong> They're having a delicious lunch at one of the ship's 13 restaurants! There's so much food to choose from — pizza, burgers, fish and chips, curry, pasta, salads, and the most amazing desserts! They might even be at the buffet trying a little bit of everything! And they're eating while watching the waves through the big windows!<br><br>
-        <strong>Afternoon Entertainment:</strong> This afternoon they might be watching a show in the theatre, playing games like bingo or trivia, or exploring all the different parts of the ship! Maybe they're shopping in the onboard shops, getting ice cream, or just sitting on deck chairs watching dolphins jump in the waves! Tonight there might be a big party with music and dancing!<br><br>
-        <strong>Special Note:</strong> At sea days are for REST and FUN! After visiting so many exciting islands, today is perfect for Nanny and Grandad to relax, recharge, and enjoy all the amazing things the Britannia has to offer. Tomorrow they arrive in Jamaica! 🏄
+        <strong>Morning Adventure:</strong> Nanny and Grandad probably took a shore excursion to visit the famous Dunn's River Falls! They might have climbed the waterfall holding hands in a human chain with other visitors, feeling the cool water rushing over their feet. It's slippery but so much fun! The climb takes about an hour and there are guides to help everyone. At the top, there's an amazing view of the Caribbean Sea!<br><br>
+        <strong>Beach Time:</strong> After the waterfall, they might have visited one of Jamaica's beautiful beaches! The sand is soft and golden, and the water is warm and clear. Maybe they went to Seven Mile Beach or Doctor's Cave Beach where you can see tropical fish swimming around! They could be relaxing under palm trees, sipping fresh coconut water straight from the coconut!<br><br>
+        <strong>Local Culture:</strong> Jamaica is famous for its music — reggae music was invented here! They might hear Bob Marley songs playing everywhere! The local people are super friendly and love to share their culture. Maybe they tried some Jamaican jerk chicken or delicious fruit like mango and pineapple! 🍍<br><br>
+        <strong>Fun Fact:</strong> Jamaica is the home of Usain Bolt, the fastest man in the world! Jamaican athletes are famous for being super speedy runners. The island motto is "Out of Many, One People" because people from all over the world live here together! 🏃‍♂️
       </div>
 
       <!-- Destination Video -->
@@ -1152,54 +1152,54 @@ body::before {
         </div>
       </div>
 
-      <!-- Ship Activity Photos -->
+      <!-- Jamaica Photos -->
       <div class="today-photos" id="todayPhotos" style="margin-top: 20px;">
         <div class="today-photo-card">
-          <img src="images/britannia-pool.jpg" alt="Pool on the Britannia" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">One of the 5 swimming pools on board!</div>
+          <img src="images/jamaica-falls.jpg" alt="Dunn's River Falls" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">Dunn's River Falls - You can climb up it!</div>
         </div>
         <div class="today-photo-card">
-          <img src="images/britannia-deck.jpg" alt="Deck view" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">The beautiful deck with ocean views!</div>
+          <img src="images/jamaica-beach.jpg" alt="Beautiful Jamaican beach" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">Beautiful tropical beaches with crystal-clear water!</div>
         </div>
         <div class="today-photo-card">
-          <img src="images/britannia-sailing.jpg" alt="Ship sailing at sea" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">The Britannia sailing across the Caribbean Sea!</div>
+          <img src="images/jamaica-hummingbird.jpg" alt="Colorful hummingbird" onerror="this.parentElement.style.display='none';">
+          <div class="photo-label">Colorful hummingbirds flying everywhere!</div>
         </div>
       </div>
 
       <div class="today-facts">
         <div class="fact-bubble">
-          <div class="fact-icon">🚢</div>
-          <div class="fact-text">The Britannia is <strong>330 metres long</strong> — as long as 3 football pitches!</div>
+          <div class="fact-icon">💦</div>
+          <div class="fact-text">Dunn's River Falls is <strong>600 feet high</strong> and you can climb all the way to the top!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🏊</div>
-          <div class="fact-text">There are <strong>5 swimming pools</strong> on board — you could swim in a different one every day!</div>
+          <div class="fact-icon">🏃‍♂️</div>
+          <div class="fact-text"><strong>Usain Bolt</strong>, the fastest man in the world, is from Jamaica!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🍕</div>
-          <div class="fact-text">The ship has <strong>13 restaurants</strong> serving food from all around the world!</div>
+          <div class="fact-icon">🎵</div>
+          <div class="fact-text"><strong>Reggae music</strong> was invented in Jamaica by Bob Marley and other musicians!</div>
         </div>
         <div class="fact-bubble">
-          <div class="fact-icon">🎭</div>
-          <div class="fact-text">There are <strong>3 theatres</strong> showing amazing live shows every night!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">🌊</div>
-          <div class="fact-text">The ship is sailing about <strong>22 knots</strong> — that's about 40 km/hour across the ocean!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">👨‍👩‍👧‍👦</div>
-          <div class="fact-text">There are <strong>3,647 passengers</strong> on board — that's like a whole village sailing together!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">🐬</div>
-          <div class="fact-text">Keep your eyes on the ocean — you might see <strong>dolphins or flying fish</strong> jumping in the waves!</div>
+          <div class="fact-icon">🐦</div>
+          <div class="fact-text">Jamaica has over <strong>250 species of birds</strong>, including the tiny colorful hummingbird!</div>
         </div>
         <div class="fact-bubble">
           <div class="fact-icon">🏝️</div>
-          <div class="fact-text"><strong>Tomorrow:</strong> They arrive in Jamaica — famous for waterfalls and super-fast runners!</div>
+          <div class="fact-text">Jamaica has <strong>beautiful mountains</strong> covered in tropical rainforest reaching over 7,000 feet high!</div>
+        </div>
+        <div class="fact-bubble">
+          <div class="fact-icon">🥥</div>
+          <div class="fact-text">Jamaica grows amazing tropical fruits like <strong>mangoes, coconuts, and pineapples</strong>!</div>
+        </div>
+        <div class="fact-bubble">
+          <div class="fact-icon">🌊</div>
+          <div class="fact-text">The water in Jamaica is so clear you can see <strong>tropical fish and colorful coral</strong> from the beach!</div>
+        </div>
+        <div class="fact-bubble">
+          <div class="fact-icon">🌅</div>
+          <div class="fact-text"><strong>Tomorrow:</strong> Back at sea sailing towards Grand Turk!</div>
         </div>
       </div>
     </div>
@@ -1307,9 +1307,9 @@ body::before {
     </div>
 
     <!-- Jamaica -->
-    <div class="port-card">
+    <div class="port-card current">
       <div class="port-card-image" style="background: linear-gradient(135deg, #228b22, #ffd700), url('images/jamaica.jpg'); background-size: cover; background-position: center;">
-        <div class="port-day-badge">Day 7</div>
+        <div class="port-day-badge">📍 Day 7 — TODAY!</div>
         <div class="port-card-hero-icon">🏄</div>
       </div>
       <div class="port-card-content">
@@ -1451,7 +1451,7 @@ body::before {
   <!-- ---- COUNTDOWN ---- -->
   <div class="countdown-section" id="countdown">
     <h2>🏠 Nanny &amp; Grandad Come Home In...</h2>
-    <div class="countdown-number" id="countdownNumber">8</div>
+    <div class="countdown-number" id="countdownNumber">7</div>
     <div class="countdown-label" id="countdownLabel">sleeps to go!</div>
     <p style="margin-top:10px; font-size:0.95rem; opacity:0.9;">They'll be back on <strong>Friday 20 February</strong> — not long now, Monty!</p>
   </div>
