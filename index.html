@@ -878,8 +878,8 @@ body::before {
 <div class="status-bar" id="statusBar">
   <div class="status-content">
     <span class="pulse-dot"></span>
-    <span class="day-badge" id="dayBadge">DAY 7 OF 14</span>
-    <span class="location-text" id="locationText">📍 Jamaica — Land of Waterfalls! 🏄</span>
+    <span class="day-badge" id="dayBadge">DAY 9 OF 14</span>
+    <span class="location-text" id="locationText">📍 Grand Turk — Island of Wild Horses! 🐎</span>
   </div>
 </div>
 
@@ -938,7 +938,7 @@ body::before {
           points="881,450 488,498 456,497 411,481 90,213 359,75 776,272 797,355 881,450"/>
 
         <!-- ROUTE LINE — Completed portion (solid orange) -->
-        <polyline id="routeCompleted" class="map-route-completed" points="881,450 488,498 456,497 411,481 90,213"/>
+        <polyline id="routeCompleted" class="map-route-completed" points="881,450 488,498 456,497 411,481 90,213 359,75"/>
 
         <!-- PORT MARKERS -->
         <!-- Barbados (Start/End) -->
@@ -974,7 +974,7 @@ body::before {
         </g>
 
         <!-- Grand Turk -->
-        <g class="map-port" transform="translate(359,75)">
+        <g class="map-port current" transform="translate(359,75)">
           <circle class="port-dot" r="7"/>
           <text x="0" y="-14" font-weight="700" font-size="11" text-anchor="middle">Grand Turk</text>
         </g>
@@ -991,8 +991,8 @@ body::before {
           <text x="15" y="4" font-weight="700" font-size="11">Dominica</text>
         </g>
 
-        <!-- SHIP ICON (current position — at Jamaica) -->
-        <g class="ship-icon" id="shipIcon" transform="translate(90,213)">
+        <!-- SHIP ICON (current position — at Grand Turk) -->
+        <g class="ship-icon" id="shipIcon" transform="translate(359,75)">
           <text font-size="28" text-anchor="middle" y="8">🚢</text>
         </g>
       </svg>
@@ -1056,21 +1056,21 @@ body::before {
         <div class="tl-port">At Sea</div>
       </div>
       <!-- Day 7 -->
-      <div class="timeline-day current">
+      <div class="timeline-day visited">
         <div class="tl-icon">🏄</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Fri 13 Feb</div>
         <div class="tl-port">Jamaica</div>
       </div>
       <!-- Day 8 -->
-      <div class="timeline-day">
+      <div class="timeline-day visited">
         <div class="tl-icon">🌊</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Sat 14 Feb</div>
         <div class="tl-port">At Sea</div>
       </div>
       <!-- Day 9 -->
-      <div class="timeline-day">
+      <div class="timeline-day current">
         <div class="tl-icon">🐎</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Sun 15 Feb</div>
@@ -1122,86 +1122,11 @@ body::before {
 
   <div class="today-card" id="todayCard">
     <div class="today-card-header">
-      <span style="font-size:2rem">🏄</span>
-      <h3 id="todayTitle">Day 7 — Jamaica!</h3>
+      <span style="font-size:2rem" id="todayIcon">🐎</span>
+      <h3 id="todayTitle">Day 9 — Grand Turk!</h3>
     </div>
-    <div class="today-card-body">
-      <div class="today-hero-message">
-        <span class="hero-name">🦾 Iron Man says:</span><br>
-        "Hey Monty! Today Nanny and Grandad have arrived in <strong>Jamaica</strong>! 🇯🇲 This is one of the most exciting islands in the whole Caribbean! Jamaica is famous for its incredible waterfalls that you can actually CLIMB, beautiful beaches with crystal-clear water, and the friendliest people who love music and dancing! The island is covered in green mountains and tropical forests — my sensors are picking up the most amazing sights!"
-      </div>
-
-      <div class="today-hero-message" style="margin-top: 15px; border-left-color: var(--blue-bright); background: linear-gradient(135deg, rgba(255,109,0,0.1), rgba(33,150,243,0.15));">
-        <span class="hero-name">💪 Hulk reports:</span><br>
-        "Hulk LOVE Jamaica! This island has the BEST waterfalls! At Dunn's River Falls, you can climb UP the waterfall while water splashes all over you — it's like climbing a natural water slide! There are 600 feet of cascading waterfalls with natural pools where you can splash around! Hulk also see beautiful green mountains, tropical flowers, and colorful hummingbirds flying everywhere! Jamaica make Hulk happy!"
-      </div>
-
-      <div class="today-hero-message" style="margin-top: 15px; border-left-color: var(--orange-bright);">
-        <span class="hero-name">🦾 What they're doing today!</span><br>
-        <strong>Morning Adventure:</strong> Nanny and Grandad probably took a shore excursion to visit the famous Dunn's River Falls! They might have climbed the waterfall holding hands in a human chain with other visitors, feeling the cool water rushing over their feet. It's slippery but so much fun! The climb takes about an hour and there are guides to help everyone. At the top, there's an amazing view of the Caribbean Sea!<br><br>
-        <strong>Beach Time:</strong> After the waterfall, they might have visited one of Jamaica's beautiful beaches! The sand is soft and golden, and the water is warm and clear. Maybe they went to Seven Mile Beach or Doctor's Cave Beach where you can see tropical fish swimming around! They could be relaxing under palm trees, sipping fresh coconut water straight from the coconut!<br><br>
-        <strong>Local Culture:</strong> Jamaica is famous for its music — reggae music was invented here! They might hear Bob Marley songs playing everywhere! The local people are super friendly and love to share their culture. Maybe they tried some Jamaican jerk chicken or delicious fruit like mango and pineapple! 🍍<br><br>
-        <strong>Fun Fact:</strong> Jamaica is the home of Usain Bolt, the fastest man in the world! Jamaican athletes are famous for being super speedy runners. The island motto is "Out of Many, One People" because people from all over the world live here together! 🏃‍♂️
-      </div>
-
-      <!-- Destination Video -->
-      <div class="today-video-container" id="todayVideo" style="display: none;">
-        <div class="video-title" id="videoTitle">🎬 Watch a video!</div>
-        <div class="video-wrapper">
-          <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <!-- Jamaica Photos -->
-      <div class="today-photos" id="todayPhotos" style="margin-top: 20px;">
-        <div class="today-photo-card">
-          <img src="images/jamaica-falls.jpg" alt="Dunn's River Falls" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">Dunn's River Falls - You can climb up it!</div>
-        </div>
-        <div class="today-photo-card">
-          <img src="images/jamaica-beach.jpg" alt="Beautiful Jamaican beach" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">Beautiful tropical beaches with crystal-clear water!</div>
-        </div>
-        <div class="today-photo-card">
-          <img src="images/jamaica-hummingbird.jpg" alt="Colorful hummingbird" onerror="this.parentElement.style.display='none';">
-          <div class="photo-label">Colorful hummingbirds flying everywhere!</div>
-        </div>
-      </div>
-
-      <div class="today-facts">
-        <div class="fact-bubble">
-          <div class="fact-icon">💦</div>
-          <div class="fact-text">Dunn's River Falls is <strong>600 feet high</strong> and you can climb all the way to the top!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">🏃‍♂️</div>
-          <div class="fact-text"><strong>Usain Bolt</strong>, the fastest man in the world, is from Jamaica!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">🎵</div>
-          <div class="fact-text"><strong>Reggae music</strong> was invented in Jamaica by Bob Marley and other musicians!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">🐦</div>
-          <div class="fact-text">Jamaica has over <strong>250 species of birds</strong>, including the tiny colorful hummingbird!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">🏝️</div>
-          <div class="fact-text">Jamaica has <strong>beautiful mountains</strong> covered in tropical rainforest reaching over 7,000 feet high!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">🥥</div>
-          <div class="fact-text">Jamaica grows amazing tropical fruits like <strong>mangoes, coconuts, and pineapples</strong>!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">🌊</div>
-          <div class="fact-text">The water in Jamaica is so clear you can see <strong>tropical fish and colorful coral</strong> from the beach!</div>
-        </div>
-        <div class="fact-bubble">
-          <div class="fact-icon">🌅</div>
-          <div class="fact-text"><strong>Tomorrow:</strong> Back at sea sailing towards Grand Turk!</div>
-        </div>
-      </div>
+    <div class="today-card-body" id="todayCardBody">
+      <!-- Content will be dynamically loaded by JavaScript -->
     </div>
   </div>
 
@@ -1307,9 +1232,9 @@ body::before {
     </div>
 
     <!-- Jamaica -->
-    <div class="port-card current">
+    <div class="port-card visited">
       <div class="port-card-image" style="background: linear-gradient(135deg, #228b22, #ffd700), url('images/jamaica.jpg'); background-size: cover; background-position: center;">
-        <div class="port-day-badge">📍 Day 7 — TODAY!</div>
+        <div class="port-day-badge">✅ Day 7 — Visited!</div>
         <div class="port-card-hero-icon">🏄</div>
       </div>
       <div class="port-card-content">
@@ -1323,17 +1248,17 @@ body::before {
     </div>
 
     <!-- Grand Turk -->
-    <div class="port-card">
+    <div class="port-card current">
       <div class="port-card-image" style="background: linear-gradient(135deg, #40e0d0, #ff8c00), url('images/grand-turk.jpg'); background-size: cover; background-position: center;">
-        <div class="port-day-badge">Day 9</div>
+        <div class="port-day-badge">📍 Day 9 — TODAY!</div>
         <div class="port-card-hero-icon">🐎</div>
       </div>
       <div class="port-card-content">
         <h3>Grand Turk 🇹🇨</h3>
         <div class="port-date">Sun 15 February</div>
-        <p class="port-desc">Grand Turk is a tiny island with the most amazing turquoise water! There are wild horses and donkeys that walk around the island! And the beach has the softest sand ever!</p>
+        <p class="port-desc">Grand Turk is a tiny magical island with the most stunning turquoise water in the whole Caribbean! Wild horses roam free on the beaches, splashing in the waves! There are also friendly wild donkeys that walk around town. The beaches have the softest white sand, and the water is so clear you can see all the way to the bottom! It's one of the most peaceful and beautiful places in the world!</p>
         <div class="port-funfact">
-          <strong>🦾 Iron Man Fun Fact:</strong> Wild horses roam free on Grand Turk! Even my suit's GPS can't keep up with them!
+          <strong>🦾 Iron Man Fun Fact:</strong> Grand Turk is only 7 miles long — but it has wild horses running on beaches and water so clear my suit can scan the ocean floor from the sky! Even astronaut John Glenn landed here after his space mission!
         </div>
       </div>
     </div>
@@ -1451,7 +1376,7 @@ body::before {
   <!-- ---- COUNTDOWN ---- -->
   <div class="countdown-section" id="countdown">
     <h2>🏠 Nanny &amp; Grandad Come Home In...</h2>
-    <div class="countdown-number" id="countdownNumber">7</div>
+    <div class="countdown-number" id="countdownNumber">5</div>
     <div class="countdown-label" id="countdownLabel">sleeps to go!</div>
     <p style="margin-top:10px; font-size:0.95rem; opacity:0.9;">They'll be back on <strong>Friday 20 February</strong> — not long now, Monty!</p>
   </div>
@@ -1543,9 +1468,45 @@ body::before {
     'Curaçao': 'oDVkHEILTi4',       // Replace with actual Curaçao video ID
     'Aruba': '9OTecjGzMjg',         // Replace with actual Aruba video ID
     'Jamaica': '_HPpuozyvAw',       // Replace with actual Jamaica video ID
-    'Grand Turk': 'dQw4w9WgXcQ',    // Replace with actual Grand Turk video ID
+    'Grand Turk': 'kVJMLH3eXdI',    // Grand Turk Turks and Caicos travel video
     'Antigua': 'dQw4w9WgXcQ',       // Replace with actual Antigua video ID
     'Dominica': 'dQw4w9WgXcQ'       // Replace with actual Dominica video ID
+  };
+
+  // ---- DESTINATION MISSION REPORTS ----
+  const missionReports = {
+    'Jamaica': {
+      icon: '🏄',
+      ironManMessage: '"Hey Monty! Today Nanny and Grandad have arrived in <strong>Jamaica</strong>! 🇯🇲 This is one of the most exciting islands in the whole Caribbean! Jamaica is famous for its incredible waterfalls that you can actually CLIMB, beautiful beaches with crystal-clear water, and the friendliest people who love music and dancing! The island is covered in green mountains and tropical forests — my sensors are picking up the most amazing sights!"',
+      hulkMessage: '"Hulk LOVE Jamaica! This island has the BEST waterfalls! At Dunn\'s River Falls, you can climb UP the waterfall while water splashes all over you — it\'s like climbing a natural water slide! There are 600 feet of cascading waterfalls with natural pools where you can splash around! Hulk also see beautiful green mountains, tropical flowers, and colorful hummingbirds flying everywhere! Jamaica make Hulk happy!"',
+      activities: '<strong>Morning Adventure:</strong> Nanny and Grandad probably took a shore excursion to visit the famous Dunn\'s River Falls! They might have climbed the waterfall holding hands in a human chain with other visitors, feeling the cool water rushing over their feet. It\'s slippery but so much fun! The climb takes about an hour and there are guides to help everyone. At the top, there\'s an amazing view of the Caribbean Sea!<br><br><strong>Beach Time:</strong> After the waterfall, they might have visited one of Jamaica\'s beautiful beaches! The sand is soft and golden, and the water is warm and clear. Maybe they went to Seven Mile Beach or Doctor\'s Cave Beach where you can see tropical fish swimming around! They could be relaxing under palm trees, sipping fresh coconut water straight from the coconut!<br><br><strong>Local Culture:</strong> Jamaica is famous for its music — reggae music was invented here! They might hear Bob Marley songs playing everywhere! The local people are super friendly and love to share their culture. Maybe they tried some Jamaican jerk chicken or delicious fruit like mango and pineapple! 🍍<br><br><strong>Fun Fact:</strong> Jamaica is the home of Usain Bolt, the fastest man in the world! Jamaican athletes are famous for being super speedy runners. The island motto is "Out of Many, One People" because people from all over the world live here together! 🏃‍♂️',
+      facts: [
+        { icon: '💦', text: 'Dunn\'s River Falls is <strong>600 feet high</strong> and you can climb all the way to the top!' },
+        { icon: '🏃‍♂️', text: '<strong>Usain Bolt</strong>, the fastest man in the world, is from Jamaica!' },
+        { icon: '🎵', text: '<strong>Reggae music</strong> was invented in Jamaica by Bob Marley and other musicians!' },
+        { icon: '🐦', text: 'Jamaica has over <strong>250 species of birds</strong>, including the tiny colorful hummingbird!' },
+        { icon: '🏝️', text: 'Jamaica has <strong>beautiful mountains</strong> covered in tropical rainforest reaching over 7,000 feet high!' },
+        { icon: '🥥', text: 'Jamaica grows amazing tropical fruits like <strong>mangoes, coconuts, and pineapples</strong>!' },
+        { icon: '🌊', text: 'The water in Jamaica is so clear you can see <strong>tropical fish and colorful coral</strong> from the beach!' },
+        { icon: '🌅', text: '<strong>Tomorrow:</strong> Back at sea sailing towards Grand Turk!' }
+      ]
+    },
+    'Grand Turk': {
+      icon: '🐎',
+      ironManMessage: '"Hey Monty! Today Nanny and Grandad have arrived in <strong>Grand Turk</strong>! 🇹🇨 This is one of the TINIEST but most BEAUTIFUL islands in the Caribbean! Grand Turk is famous for its wild horses that roam free on the beaches, the most incredible turquoise blue water you\'ve ever seen, and some of the softest white sand in the world! My suit\'s sensors are detecting crystal-clear water so pure, you can see 200 feet down to the coral reefs! This place is magical!"',
+      hulkMessage: '"Hulk AMAZED by Grand Turk! This small island has BIG beauty! Wild horses run free on beaches — they splash in ocean and eat grass near palm trees! Hulk love horses! The water here is SO blue and clear, Hulk can see ALL the fish swimming! There are beautiful coral reefs with colorful fish — orange ones, yellow ones, blue ones! Grand Turk also has friendly donkeys that walk around town. Hulk want to pet them all!"',
+      activities: '<strong>Beach Paradise:</strong> Nanny and Grandad are probably spending time on one of Grand Turk\'s gorgeous beaches! The sand is incredibly soft and white, like walking on powder. The water is so clear and calm, it\'s perfect for swimming! Governor\'s Beach is one of the most beautiful beaches in the whole Caribbean — they might be there right now, watching the wild horses walk along the shoreline!<br><br><strong>Wild Animal Encounters:</strong> Grand Turk is famous for its wild horses and donkeys that roam freely around the island! Nanny and Grandad might see horses galloping along the beach or standing in the shallow water cooling off. The donkeys are super friendly and sometimes come right up to say hello! 🐴<br><br><strong>Snorkeling Adventure:</strong> The water around Grand Turk is perfect for snorkeling! There\'s a huge coral reef wall that drops down into the deep ocean, and it\'s full of colorful tropical fish, sea turtles, and even stingrays! The water is so clear, it\'s like looking through a window!<br><br><strong>Fun Fact:</strong> Grand Turk is only 7 miles long and 1.5 miles wide — it\'s so small you could walk across it! But even though it\'s tiny, it has some of the most beautiful beaches in the world! NASA\'s astronaut John Glenn even splashed down near Grand Turk after orbiting Earth! 🚀',
+      facts: [
+        { icon: '🐎', text: '<strong>Wild horses</strong> roam free on Grand Turk\'s beaches — you can see them splashing in the water!' },
+        { icon: '🏝️', text: 'Grand Turk is only <strong>7 miles long</strong> — one of the smallest inhabited islands in the Caribbean!' },
+        { icon: '🌊', text: 'The water is so clear you can see <strong>200 feet down</strong> to the coral reefs!' },
+        { icon: '🐴', text: 'There are <strong>wild donkeys</strong> too — they walk around town and are super friendly!' },
+        { icon: '🐢', text: 'Grand Turk is famous for <strong>sea turtles</strong> that swim near the beaches!' },
+        { icon: '🚀', text: 'Astronaut <strong>John Glenn</strong> landed in the ocean near Grand Turk after his space mission in 1962!' },
+        { icon: '🤿', text: 'Grand Turk has an <strong>underwater wall</strong> that drops thousands of feet — perfect for snorkeling!' },
+        { icon: '🌅', text: '<strong>Tomorrow:</strong> Back at sea sailing towards Antigua!' }
+      ]
+    }
   };
 
   // ---- CALCULATE CURRENT DAY ----
@@ -1688,6 +1649,83 @@ body::before {
     document.getElementById('countdownLabel').textContent = 'sleep to go! Nearly there!';
   } else {
     document.getElementById('countdownLabel').textContent = 'sleeps to go!';
+  }
+
+  // ---- UPDATE TODAY'S MISSION REPORT ----
+  const todayCardBody = document.getElementById('todayCardBody');
+  const todayIcon = document.getElementById('todayIcon');
+  const todayTitle = document.getElementById('todayTitle');
+
+  if (currentStop && currentStop.type === 'port' && missionReports[currentStop.port]) {
+    const report = missionReports[currentStop.port];
+
+    // Update header
+    todayIcon.textContent = report.icon;
+    todayTitle.textContent = 'Day ' + currentDay + ' — ' + currentStop.port + '!';
+
+    // Build mission report HTML
+    let reportHtml = `
+      <div class="today-hero-message">
+        <span class="hero-name">🦾 Iron Man says:</span><br>
+        ${report.ironManMessage}
+      </div>
+
+      <div class="today-hero-message" style="margin-top: 15px; border-left-color: var(--blue-bright); background: linear-gradient(135deg, rgba(255,109,0,0.1), rgba(33,150,243,0.15));">
+        <span class="hero-name">💪 Hulk reports:</span><br>
+        ${report.hulkMessage}
+      </div>
+
+      <div class="today-hero-message" style="margin-top: 15px; border-left-color: var(--orange-bright);">
+        <span class="hero-name">🦾 What they're doing today!</span><br>
+        ${report.activities}
+      </div>
+
+      <!-- Destination Video -->
+      <div class="today-video-container" id="todayVideo" style="display: none;">
+        <div class="video-title" id="videoTitle">🎬 Watch a video!</div>
+        <div class="video-wrapper">
+          <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Photos -->
+      <div class="today-photos" id="todayPhotos" style="margin-top: 20px;"></div>
+
+      <div class="today-facts" id="todayFacts">
+    `;
+
+    // Add fact bubbles
+    report.facts.forEach(fact => {
+      reportHtml += `
+        <div class="fact-bubble">
+          <div class="fact-icon">${fact.icon}</div>
+          <div class="fact-text">${fact.text}</div>
+        </div>
+      `;
+    });
+
+    reportHtml += '</div>';
+    todayCardBody.innerHTML = reportHtml;
+
+  } else {
+    // Default content for days without specific mission reports (sea days, other ports)
+    todayIcon.textContent = currentStop ? currentStop.emoji : '🌊';
+    todayTitle.textContent = 'Day ' + currentDay + (currentStop ? ' — ' + currentStop.port + '!' : '');
+
+    let defaultHtml = `
+      <div class="today-hero-message">
+        <span class="hero-name">🦾 Iron Man says:</span><br>
+        "Hey Monty! ${currentStop && currentStop.type === 'sea' ? 'Today is a sea day! Nanny and Grandad are sailing across the beautiful Caribbean ocean!' : 'Nanny and Grandad are having an amazing adventure today!'}"
+      </div>
+      <div class="today-video-container" id="todayVideo" style="display: none;">
+        <div class="video-title" id="videoTitle">🎬 Watch a video!</div>
+        <div class="video-wrapper">
+          <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="today-photos" id="todayPhotos" style="margin-top: 20px;"></div>
+    `;
+    todayCardBody.innerHTML = defaultHtml;
   }
 
   // ---- UPDATE DESTINATION PHOTOS ----

@@ -24,12 +24,12 @@ Replace the placeholder `'dQw4w9WgXcQ'` with your actual video IDs:
 
 ```javascript
 const destinationVideos = {
-  'Barbados': 'YOUR_VIDEO_ID_HERE',
-  'Bonaire': 'YOUR_VIDEO_ID_HERE',
-  'Curaçao': 'YOUR_VIDEO_ID_HERE',
-  'Aruba': 'YOUR_VIDEO_ID_HERE',
-  'Jamaica': 'YOUR_VIDEO_ID_HERE',
-  'Grand Turk': 'YOUR_VIDEO_ID_HERE',
+  'Barbados': 'x3BLmksuxoM',
+  'Bonaire': 'x3BLmksuxoM',
+  'Curaçao': 'oDVkHEILTi4',
+  'Aruba': '9OTecjGzMjg',
+  'Jamaica': '_HPpuozyvAw',
+  'Grand Turk': 'kVJMLH3eXdI',  // ✅ Updated!
   'Antigua': 'YOUR_VIDEO_ID_HERE',
   'Dominica': 'YOUR_VIDEO_ID_HERE'
 };
