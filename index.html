@@ -878,8 +878,8 @@ body::before {
 <div class="status-bar" id="statusBar">
   <div class="status-content">
     <span class="pulse-dot"></span>
-    <span class="day-badge" id="dayBadge">DAY 9 OF 14</span>
-    <span class="location-text" id="locationText">📍 Grand Turk — Island of Wild Horses! 🐎</span>
+    <span class="day-badge" id="dayBadge">DAY 11 OF 14</span>
+    <span class="location-text" id="locationText">📍 Antigua — Island of 365 Beaches! ⚓</span>
   </div>
 </div>
 
@@ -938,7 +938,7 @@ body::before {
           points="881,450 488,498 456,497 411,481 90,213 359,75 776,272 797,355 881,450"/>
 
         <!-- ROUTE LINE — Completed portion (solid orange) -->
-        <polyline id="routeCompleted" class="map-route-completed" points="881,450 488,498 456,497 411,481 90,213 359,75"/>
+        <polyline id="routeCompleted" class="map-route-completed" points="881,450 488,498 456,497 411,481 90,213 359,75 776,272"/>
 
         <!-- PORT MARKERS -->
         <!-- Barbados (Start/End) -->
@@ -974,13 +974,13 @@ body::before {
         </g>
 
         <!-- Grand Turk -->
-        <g class="map-port current" transform="translate(359,75)">
+        <g class="map-port visited" transform="translate(359,75)">
           <circle class="port-dot" r="7"/>
           <text x="0" y="-14" font-weight="700" font-size="11" text-anchor="middle">Grand Turk</text>
         </g>
 
         <!-- Antigua -->
-        <g class="map-port" transform="translate(776,272)">
+        <g class="map-port current" transform="translate(776,272)">
           <circle class="port-dot" r="7"/>
           <text x="15" y="4" font-weight="700" font-size="11">Antigua</text>
         </g>
@@ -991,8 +991,8 @@ body::before {
           <text x="15" y="4" font-weight="700" font-size="11">Dominica</text>
         </g>
 
-        <!-- SHIP ICON (current position — at Grand Turk) -->
-        <g class="ship-icon" id="shipIcon" transform="translate(359,75)">
+        <!-- SHIP ICON (current position — at Antigua) -->
+        <g class="ship-icon" id="shipIcon" transform="translate(776,272)">
           <text font-size="28" text-anchor="middle" y="8">🚢</text>
         </g>
       </svg>
@@ -1070,21 +1070,21 @@ body::before {
         <div class="tl-port">At Sea</div>
       </div>
       <!-- Day 9 -->
-      <div class="timeline-day current">
+      <div class="timeline-day visited">
         <div class="tl-icon">🐎</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Sun 15 Feb</div>
         <div class="tl-port">Grand Turk</div>
       </div>
       <!-- Day 10 -->
-      <div class="timeline-day">
+      <div class="timeline-day visited">
         <div class="tl-icon">🌊</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Mon 16 Feb</div>
         <div class="tl-port">At Sea</div>
       </div>
       <!-- Day 11 -->
-      <div class="timeline-day">
+      <div class="timeline-day current">
         <div class="tl-icon">⚓</div>
         <div class="tl-dot"></div>
         <div class="tl-date">Tue 17 Feb</div>
@@ -1122,8 +1122,8 @@ body::before {
 
   <div class="today-card" id="todayCard">
     <div class="today-card-header">
-      <span style="font-size:2rem" id="todayIcon">🐎</span>
-      <h3 id="todayTitle">Day 9 — Grand Turk!</h3>
+      <span style="font-size:2rem" id="todayIcon">⚓</span>
+      <h3 id="todayTitle">Day 11 — Antigua!</h3>
     </div>
     <div class="today-card-body" id="todayCardBody">
       <!-- Content will be dynamically loaded by JavaScript -->
@@ -1248,9 +1248,9 @@ body::before {
     </div>
 
     <!-- Grand Turk -->
-    <div class="port-card current">
+    <div class="port-card visited">
       <div class="port-card-image" style="background: linear-gradient(135deg, #40e0d0, #ff8c00), url('images/grand-turk.jpg'); background-size: cover; background-position: center;">
-        <div class="port-day-badge">📍 Day 9 — TODAY!</div>
+        <div class="port-day-badge">✅ Day 9 — Visited!</div>
         <div class="port-card-hero-icon">🐎</div>
       </div>
       <div class="port-card-content">
@@ -1264,9 +1264,9 @@ body::before {
     </div>
 
     <!-- Antigua -->
-    <div class="port-card">
+    <div class="port-card current">
       <div class="port-card-image" style="background: linear-gradient(135deg, #87ceeb, #f0e68c), url('images/antigua.jpg'); background-size: cover; background-position: center;">
-        <div class="port-day-badge">Day 11</div>
+        <div class="port-day-badge">📍 Day 11 — TODAY!</div>
         <div class="port-card-hero-icon">⚓</div>
       </div>
       <div class="port-card-content">
@@ -1376,7 +1376,7 @@ body::before {
   <!-- ---- COUNTDOWN ---- -->
   <div class="countdown-section" id="countdown">
     <h2>🏠 Nanny &amp; Grandad Come Home In...</h2>
-    <div class="countdown-number" id="countdownNumber">5</div>
+    <div class="countdown-number" id="countdownNumber">3</div>
     <div class="countdown-label" id="countdownLabel">sleeps to go!</div>
     <p style="margin-top:10px; font-size:0.95rem; opacity:0.9;">They'll be back on <strong>Friday 20 February</strong> — not long now, Monty!</p>
   </div>
@@ -1505,6 +1505,22 @@ body::before {
         { icon: '🚀', text: 'Astronaut <strong>John Glenn</strong> landed in the ocean near Grand Turk after his space mission in 1962!' },
         { icon: '🤿', text: 'Grand Turk has an <strong>underwater wall</strong> that drops thousands of feet — perfect for snorkeling!' },
         { icon: '🌅', text: '<strong>Tomorrow:</strong> Back at sea sailing towards Antigua!' }
+      ]
+    },
+    'Antigua': {
+      icon: '⚓',
+      ironManMessage: '"Hey Monty! Today Nanny and Grandad have arrived in <strong>Antigua</strong>! 🇦🇬 This island is LEGENDARY! Antigua has <strong>365 beaches</strong> — that\'s one for every single day of the year! My suit\'s scanners are picking up pristine white sand beaches all around the island, historic Nelson\'s Dockyard where REAL pirate ships used to dock, and the most beautiful turquoise harbors you\'ve ever seen! This place is a paradise for adventurers!"',
+      hulkMessage: '"Hulk COUNT beaches on Antigua — 365 beaches! That MORE beaches than Hulk can visit in one day! Each beach has soft white sand and clear blue water! Hulk also see old pirate harbors and colorful sailboats everywhere! The water is perfect for swimming and the sun is warm and bright! Hulk want to spend ALL DAY on beach! Antigua make Hulk smile BIG smile!"',
+      activities: '<strong>Beach Exploration:</strong> With 365 beaches to choose from, Nanny and Grandad are spoiled for choice! They might be relaxing on the famous Dickenson Bay with its soft white sand and calm turquoise water, or exploring Half Moon Bay which is considered one of the most beautiful beaches in the Caribbean! The water is warm, clear, and perfect for swimming! 🏖️<br><br><strong>Historic Harbour:</strong> Antigua is home to Nelson\'s Dockyard, a historic naval harbor where real pirate ships and British Navy vessels used to dock in the 1700s! It\'s beautifully restored with colorful colonial buildings, restaurants, and museums. Nanny and Grandad can walk around and imagine what life was like when pirates sailed these waters! ⚓<br><br><strong>Sailing Paradise:</strong> Antigua is famous for sailing! The harbors are full of beautiful sailboats and yachts from all over the world. The island hosts one of the biggest sailing races in the Caribbean! Maybe they\'ll see the tall ships with their white sails gliding across the crystal-blue water!<br><br><strong>Fun Fact:</strong> Antigua was once a major British naval base, and Admiral Horatio Nelson (one of Britain\'s most famous naval heroes) lived here! The harbor is named after him. Pirates used to hide in the many bays and coves around the island! 🏴‍☠️',
+      facts: [
+        { icon: '🏖️', text: 'Antigua has <strong>365 beaches</strong> — one for every day of the year!' },
+        { icon: '⚓', text: '<strong>Nelson\'s Dockyard</strong> is a historic harbor where pirate ships once docked in the 1700s!' },
+        { icon: '⛵', text: 'Antigua is the <strong>sailing capital</strong> of the Caribbean with perfect winds and calm waters!' },
+        { icon: '🏴‍☠️', text: 'Real <strong>pirates</strong> used to hide in Antigua\'s secret bays and coves!' },
+        { icon: '🏝️', text: 'The island is <strong>108 square miles</strong> and almost completely surrounded by reefs and beaches!' },
+        { icon: '🌊', text: 'The water around Antigua is so calm and clear, it\'s perfect for <strong>snorkeling and swimming</strong>!' },
+        { icon: '🇬🇧', text: '<strong>Admiral Nelson</strong>, Britain\'s greatest naval hero, lived here in the 1780s!' },
+        { icon: '🌅', text: '<strong>Tomorrow:</strong> Sailing to Dominica — the Nature Island!' }
       ]
     }
   };
